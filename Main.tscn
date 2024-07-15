@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://do4yq57sg5sr"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_rov57"]
+[ext_resource type="Theme" uid="uid://bnxvl1etc2sj3" path="res://Main_GUI_theme.tres" id="2_gcpkw"]
+[ext_resource type="AudioStream" uid="uid://dsahusonf4eps" path="res://MidRangeRPM.wav" id="3_03tdh"]
+[ext_resource type="AudioStream" uid="uid://b6te552tuaia1" path="res://StarterRPM.wav" id="4_xhcna"]
+[ext_resource type="Texture2D" uid="uid://do5dh0s7nk5i4" path="res://StarterMotor.webp" id="5_fmdb6"]
+[ext_resource type="AudioStream" uid="uid://bpr6sls45i3ju" path="res://StopRPM.wav" id="5_gkp8i"]
+[ext_resource type="AudioStream" uid="uid://cidgtig6gtb26" path="res://ThudRPM.ogg" id="5_ve3s7"]
+[ext_resource type="Texture2D" uid="uid://dax5g1igce5pq" path="res://C20Engine.png" id="6_3gmex"]
+[ext_resource type="Texture2D" uid="uid://3v50ptdbh7y6" path="res://Transmission.jpg" id="7_w1gxo"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rov57")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 600.0
+theme = ExtResource("2_gcpkw")
+
+[node name="RPM" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 343.0
+offset_right = 377.0
+offset_bottom = 360.0
+text = "RPM: 0"
+
+[node name="Compress" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 290.0
+offset_right = 377.0
+offset_bottom = 307.0
+text = "Compress: 0"
+
+[node name="Expand" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 307.0
+offset_right = 378.0
+offset_bottom = 324.0
+text = "Expand: 0"
+
+[node name="Recover" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 325.0
+offset_right = 377.0
+offset_bottom = 342.0
+text = "Recover: 0"
+
+[node name="Power" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 311.0
+offset_right = 573.0
+offset_bottom = 328.0
+text = "Power: 0"
+
+[node name="Throttle" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 539.0
+offset_right = 388.0
+offset_bottom = 556.0
+text = "Throttle: 0%"
+
+[node name="Output" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 293.0
+offset_right = 570.0
+offset_bottom = 310.0
+text = "Shaft RPM: 0"
+
+[node name="ThrottleValue" type="VSlider" parent="GUI"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 378.0
+offset_right = 378.0
+offset_bottom = 530.0
+max_value = 1.0
+step = 0.01
+
+[node name="AutoStart" type="Button" parent="GUI"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 287.0
+offset_right = 225.0
+offset_bottom = 312.0
+action_mode = 0
+text = "Starter"
+
+[node name="LabelStarter" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 149.0
+offset_right = 230.0
+offset_bottom = 166.0
+text = "Starter Motor
+"
+
+[node name="LabelEngine" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 150.0
+offset_right = 391.0
+offset_bottom = 167.0
+text = "Engine
+"
+
+[node name="LabelTransmission" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 145.0
+offset_right = 597.0
+offset_bottom = 162.0
+text = "Transmission
+"
+
+[node name="Label" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 16.0
+offset_right = 770.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 22
+text = "Circuit_Boards Cursed Jet Engine Simulator...    (+13% throttle for idle)"
+
+[node name="StarterRPM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xhcna")
+volume_db = -25.0
+
+[node name="RunRPM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_03tdh")
+volume_db = -23.0
+
+[node name="ThudRPM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ve3s7")
+volume_db = -18.0
+
+[node name="StopRPM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gkp8i")
+volume_db = -21.0
+
+[node name="StarterMotor" type="Sprite2D" parent="."]
+position = Vector2(191, 231)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_fmdb6")
+
+[node name="C20Engine" type="Sprite2D" parent="."]
+position = Vector2(364, 234)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("6_3gmex")
+
+[node name="Transmission" type="Sprite2D" parent="."]
+position = Vector2(556, 233)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_w1gxo")

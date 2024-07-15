@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Brayton Simulator v1.2"
+config/description="A Cursed jet engine simulator (wip) by Circuit_Board"
+config/version="godot4.2.2"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=60
+boot_splash/image="res://Splashpng.png"
+config/icon="res://Splashpng.png"
+boot_splash/minimum_display_time=3000
+
+[audio]
+
+driver/enable_input=true
+driver/mix_rate=48000
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/size/resizable=false
+
+[dotnet]
+
+project/assembly_name="V 1"
+
+[editor]
+
+naming/scene_name_casing=1
+version_control/autoload_on_startup=true
+
+[gui]
+
+timers/incremental_search_max_interval_msec=500
+
+[physics]
+
+2d/run_on_separate_thread=true
+common/physics_ticks_per_second=30
+common/max_physics_steps_per_frame=1
+2d/default_gravity=0.0
+2d/default_gravity_vector=Vector2(0, 0)
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_taa=true
